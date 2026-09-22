@@ -1,0 +1,370 @@
+/* ============================================================
+   Khadafi's Recipe Book
+   ============================================================ */
+
+:root {
+  --bg: #fbf7f1;
+  --surface: #ffffff;
+  --ink: #2e2a26;
+  --muted: #7a726a;
+  --accent: #c0492b;
+  --accent-dark: #9a3620;
+  --line: #e8e0d5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Georgia", "Times New Roman", serif;
+  background-color: var(--bg);
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+.navbar-brand {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-dark);
+}
+
+/* ---------- nav ---------- */
+
+.navbar {
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--line);
+  padding: 14px 0;
+}
+
+.navbar-brand {
+  font-size: 1.4rem;
+  color: var(--accent) !important;
+}
+
+.navbar .nav-link {
+  color: var(--ink) !important;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.95rem;
+  padding: 0.25rem 0.9rem;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: var(--accent) !important;
+}
+
+/* ---------- hero ---------- */
+
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url("https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1600&q=60")
+      no-repeat center center / cover;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 40px 20px;
+}
+
+.hero-text {
+  max-width: 640px;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn-accent {
+  background-color: var(--accent);
+  border: none;
+  color: #fff;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600;
+  padding: 0.65rem 1.6rem;
+  border-radius: 999px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-accent:hover {
+  background-color: var(--accent-dark);
+  color: #fff;
+}
+
+/* ---------- section headings ---------- */
+
+.section-title {
+  text-align: center;
+  margin: 3rem 0 0.4rem;
+  font-size: 1.9rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+/* ---------- recipe cards ---------- */
+
+.recipe-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  color: var(--ink);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.recipe-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  color: var(--ink);
+}
+
+.recipe-card-img {
+  height: 190px;
+  background-size: cover;
+  background-position: center;
+}
+
+.recipe-card-body {
+  padding: 1.1rem 1.2rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.recipe-card-body h3 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0 0.4rem;
+}
+
+.recipe-blurb {
+  color: var(--muted);
+  font-size: 0.95rem;
+  flex-grow: 1;
+}
+
+.badge-category {
+  align-self: flex-start;
+  background: #f0e6da;
+  color: var(--accent-dark);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+}
+
+.recipe-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 0.9rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--line);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+/* ---------- search + filters ---------- */
+
+.toolbar {
+  max-width: 720px;
+  margin: 0 auto 2rem;
+}
+
+#searchInput {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.7rem 1.2rem;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+#searchInput:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(192, 73, 43, 0.15);
+}
+
+#category-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.filter-btn {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.85rem;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--accent);
+}
+
+.filter-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* ---------- recipe detail ---------- */
+
+.recipe-hero {
+  height: 360px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+}
+
+.recipe-detail-body {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-top: -60px;
+  position: relative;
+}
+
+.back-link {
+  display: inline-block;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+}
+
+.recipe-detail-body h1 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin: 0.5rem 0;
+}
+
+.recipe-detail-body .lead {
+  color: var(--muted);
+}
+
+.recipe-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.2rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.recipe-stats div {
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-stats strong {
+  font-size: 1.05rem;
+}
+
+.recipe-stats span {
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.recipe-detail-body h2 {
+  font-size: 1.35rem;
+  margin-bottom: 0.9rem;
+}
+
+.ingredient-list {
+  list-style: none;
+  padding: 0;
+}
+
+.ingredient-list li {
+  padding: 0.5rem 0 0.5rem 1.6rem;
+  border-bottom: 1px dashed var(--line);
+  position: relative;
+}
+
+.ingredient-list li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.method-list {
+  padding-left: 1.2rem;
+}
+
+.method-list li {
+  margin-bottom: 0.9rem;
+  padding-left: 0.4rem;
+}
+
+.method-list li::marker {
+  color: var(--accent);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+}
+
+/* ---------- about ---------- */
+
+.about-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 2.5rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* ---------- footer ---------- */
+
+.site-footer {
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  text-align: center;
+  color: var(--muted);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.85rem;
+  padding: 1.5rem 1rem;
+  margin-top: 4rem;
+}

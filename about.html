@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>About — Khadafi's Recipe Book</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+   <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+   <nav class="navbar navbar-expand-lg">
+      <div class="container">
+         <a class="navbar-brand" href="index.html">Khadafi's Recipe Book</a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+               <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+               <li class="nav-item"><a class="nav-link" href="recipes.html">All Recipes</a></li>
+               <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+
+   <div class="container mt-5">
+      <h2 class="section-title">About This Book</h2>
+      <p class="section-subtitle">Home cooking, written down before I forget it.</p>
+
+      <div class="about-card">
+         <p>Khadafi's Recipe Book started as a school project and turned into the place I keep
+            the recipes I actually cook. Every recipe here is one I've made in my own kitchen,
+            with the amounts and timings that worked for me.</p>
+         <p>The recipes lean toward big-flavor mains and a few desserts that are worth the extra
+            time. Each one lists the ingredients, a rough difficulty, how long it takes start to
+            finish, and step-by-step instructions.</p>
+         <p>Use the <a href="recipes.html">All Recipes</a> page to search by name or ingredient,
+            or filter by category to find something for tonight.</p>
+      </div>
+   </div>
+
+   <footer class="site-footer">
+      &copy; <span id="year"></span> Khadafi's Recipe Book
+   </footer>
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+
+</html>
