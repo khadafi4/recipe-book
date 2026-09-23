@@ -226,7 +226,7 @@ const RECIPES = [
   {
     id: 8,
     name: "Daf's Baked Mac and Cheese",
-    category: "Mains",
+    category: "Sides",
     difficulty: 6,
     time: "1 hr 15 mins",
     servings: 10,
