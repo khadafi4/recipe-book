@@ -238,18 +238,17 @@ const RECIPES = [
     servings: 2,
     image:
       "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=60",
-    blurb: "Serves two. Let's find out if we're a good pair.",
+    blurb: "Serves two.",
     ingredients: [
       "1 dinner reservation, my treat",
       "A chance to actually get to know each other",
-      "Good conversation — we'll see where it goes",
       "Zero pressure, just good company",
       "One evening to see if we click",
     ],
     steps: [
       "Jennifer — I don't know you all that well yet, but I'd like to change that.",
-      "I'd like to take you out. Nothing fancy required, just dinner and good conversation.",
-      "Pick a night that works for you, I'm flexible.",
+      "I'd like to take you out.",
+      "I'll pick a day and lmk if it works.",
       "Wear whatever you're comfortable in.",
       "Say yes below, and I'll text you the details.",
     ],
