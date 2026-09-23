@@ -228,7 +228,7 @@ const RECIPES = [
      after the date to remove it from the site.
      ============================================================ */
   {
-    id: "jennifer",
+    id: "off-menu",
     hidden: true, // keeps it out of the home page + all-recipes grid
     special: true, // shows the RSVP buttons on the detail page
     name: "A Recipe Made for Jennifer",
