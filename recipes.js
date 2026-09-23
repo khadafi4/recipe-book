@@ -463,6 +463,7 @@ function initProposalRsvp() {
 
   if (yesBtn) {
     yesBtn.addEventListener("click", () => {
+      message.textContent = "I'll text you the details soon 😊";
       spawnConfetti();
       notifyRsvp("Yes 😊");
     });
