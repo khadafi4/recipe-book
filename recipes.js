@@ -223,6 +223,37 @@ const RECIPES = [
       "Split each biscuit, spoon on the berries and their juice, and top with whipped cream.",
     ],
   },
+  /* ============================================================
+     TEMPORARY — easter egg for Jennifer. Delete this whole object
+     after the date to remove it from the site.
+     ============================================================ */
+  {
+    id: "jennifer",
+    hidden: true, // keeps it out of the home page + all-recipes grid
+    special: true, // shows the RSVP buttons on the detail page
+    name: "A Recipe Made for Jennifer",
+    category: "Special Occasion",
+    difficulty: 1,
+    time: "One evening",
+    servings: 2,
+    image:
+      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=60",
+    blurb: "Serves two. Let's find out if we're a good pair.",
+    ingredients: [
+      "1 dinner reservation, my treat",
+      "A chance to actually get to know each other",
+      "Good conversation — we'll see where it goes",
+      "Zero pressure, just good company",
+      "One evening to see if we click",
+    ],
+    steps: [
+      "Jennifer — I don't know you all that well yet, but I'd like to change that.",
+      "I'd like to take you out. Nothing fancy required, just dinner and good conversation.",
+      "Pick a night that works for you, I'm flexible.",
+      "Wear whatever you're comfortable in.",
+      "Say yes below, and I'll text you the details.",
+    ],
+  },
 ];
 
 /* ---------- helpers ---------- */
@@ -261,7 +292,10 @@ function recipeCard(recipe) {
 function renderHome() {
   const featured = document.getElementById("featured-recipes");
   if (!featured) return;
-  featured.innerHTML = RECIPES.slice(0, 6).map(recipeCard).join("");
+  featured.innerHTML = RECIPES.filter((r) => !r.hidden)
+    .slice(0, 6)
+    .map(recipeCard)
+    .join("");
 }
 
 /* ---------- all recipes page ---------- */
@@ -274,7 +308,8 @@ function renderList() {
   const filterBar = document.getElementById("category-filters");
   let activeCategory = "All";
 
-  const categories = ["All", ...new Set(RECIPES.map((r) => r.category))];
+  const visibleRecipes = RECIPES.filter((r) => !r.hidden);
+  const categories = ["All", ...new Set(visibleRecipes.map((r) => r.category))];
   if (filterBar) {
     filterBar.innerHTML = categories
       .map(
@@ -288,7 +323,7 @@ function renderList() {
 
   function draw() {
     const term = (searchInput ? searchInput.value : "").toLowerCase().trim();
-    const results = RECIPES.filter((r) => {
+    const results = visibleRecipes.filter((r) => {
       const matchesCategory =
         activeCategory === "All" || r.category === activeCategory;
       const matchesTerm =
@@ -368,7 +403,54 @@ function renderDetail() {
           </ol>
         </div>
       </div>
+
+      ${recipe.special ? proposalRsvpHtml() : ""}
     </div>`;
+
+  if (recipe.special) initProposalRsvp();
+}
+
+/* ---------- TEMPORARY: proposal RSVP (remove with the recipe entry) ---------- */
+
+function proposalRsvpHtml() {
+  return `
+    <div class="proposal-rsvp">
+      <button type="button" id="rsvp-yes" class="btn btn-accent">Yes 😊</button>
+      <button type="button" id="rsvp-wait" class="btn btn-outline-dark">I need a sec 😏</button>
+      <p id="rsvp-message" class="rsvp-message"></p>
+    </div>`;
+}
+
+function spawnConfetti() {
+  const emoji = ["🎉", "❤️", "✨", "🥂"];
+  for (let i = 0; i < 24; i++) {
+    const piece = document.createElement("span");
+    piece.className = "confetti-piece";
+    piece.textContent = emoji[Math.floor(Math.random() * emoji.length)];
+    piece.style.left = Math.random() * 100 + "vw";
+    piece.style.animationDelay = Math.random() * 0.4 + "s";
+    piece.style.fontSize = 16 + Math.random() * 16 + "px";
+    document.body.appendChild(piece);
+    setTimeout(() => piece.remove(), 3000);
+  }
+}
+
+function initProposalRsvp() {
+  const yesBtn = document.getElementById("rsvp-yes");
+  const waitBtn = document.getElementById("rsvp-wait");
+  const message = document.getElementById("rsvp-message");
+
+  if (yesBtn) {
+    yesBtn.addEventListener("click", () => {
+      message.textContent = "Yay! I'll text you the details, Jennifer 🎉";
+      spawnConfetti();
+    });
+  }
+  if (waitBtn) {
+    waitBtn.addEventListener("click", () => {
+      message.textContent = "Totally fine — take your time. The offer stands. 😊";
+    });
+  }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
