@@ -412,6 +412,27 @@ function renderDetail() {
 
 /* ---------- TEMPORARY: proposal RSVP (remove with the recipe entry) ---------- */
 
+/*
+ * SETUP — so you get notified when she clicks a button:
+ * 1. Go to https://formspree.io -> sign up free -> New Form
+ * 2. Copy the form's endpoint (looks like https://formspree.io/f/xxxxxxxx)
+ * 3. Paste it below as RSVP_NOTIFY_ENDPOINT
+ * That's it — no other code needs to change. Until it's set, clicks still
+ * work on the page, they just won't email you anything.
+ */
+const RSVP_NOTIFY_ENDPOINT = "https://formspree.io/f/xkjgbnge";
+
+function notifyRsvp(response) {
+  if (!RSVP_NOTIFY_ENDPOINT.startsWith("http")) return;
+  fetch(RSVP_NOTIFY_ENDPOINT, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Accept: "application/json" },
+    body: JSON.stringify({ response: response, page: "Jennifer date invite" }),
+  }).catch(() => {
+    // Fail silently — a notification hiccup shouldn't break her experience.
+  });
+}
+
 function proposalRsvpHtml() {
   return `
     <div class="proposal-rsvp">
@@ -442,13 +463,14 @@ function initProposalRsvp() {
 
   if (yesBtn) {
     yesBtn.addEventListener("click", () => {
-      message.textContent = "Yay! I'll text you the details, Jennifer 🎉";
       spawnConfetti();
+      notifyRsvp("Yes 😊");
     });
   }
   if (waitBtn) {
     waitBtn.addEventListener("click", () => {
       message.textContent = "Totally fine — take your time. The offer stands. 😊";
+      notifyRsvp("I need a sec 😏");
     });
   }
 }
