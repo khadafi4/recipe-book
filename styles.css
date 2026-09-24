@@ -468,6 +468,16 @@ a:hover {
   font-weight: 600;
 }
 
+/* Mailchimp's own validation-error/success text inside the embedded form */
+#mc_embed_signup .response {
+  flex-basis: 100%;
+  margin-top: 0.6rem;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ffe1d6;
+}
+
 /* ---------- about ---------- */
 
 .about-card {
