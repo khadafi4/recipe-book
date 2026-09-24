@@ -546,7 +546,7 @@ function proposalRsvpHtml() {
   return `
     <div class="proposal-rsvp">
       <button type="button" id="rsvp-yes" class="btn btn-accent">Yes 😊</button>
-      <button type="button" id="rsvp-wait" class="btn btn-outline-dark">I need a sec 😏</button>
+      <button type="button" id="rsvp-wait" class="btn btn-outline-dark">Nah</button>
       <p id="rsvp-message" class="rsvp-message"></p>
     </div>`;
 }
