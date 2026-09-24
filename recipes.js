@@ -580,7 +580,7 @@ function initProposalRsvp() {
   if (waitBtn) {
     waitBtn.addEventListener("click", () => {
       message.textContent = "Totally fine — take your time. The offer stands. 😊";
-      notifyRsvp("I need a sec 😏");
+      notifyRsvp("Nah");
     });
   }
 }
