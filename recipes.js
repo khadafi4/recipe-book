@@ -356,7 +356,7 @@ const RECIPES = [
       "One evening to see if we click",
     ],
     steps: [
-      "Jennifer — I don't know you all that well yet, but I'd like to change that.",
+      "Jennifer, I don't much about you yet, but I'd like to change that.",
       "I'd like to take you out.",
       "I'll pick a day and lmk if it works.",
       "Wear whatever you're comfortable in.",
