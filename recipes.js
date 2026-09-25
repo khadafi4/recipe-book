@@ -136,7 +136,7 @@ const RECIPES = [
     difficulty: 8,
     time: "3 hrs",
     servings: 12,
-    image: "https://i.postimg.cc/5yS9sf4d/IMG-3048.jpg",
+    image: "carrot-cake.jpg",
     blurb:
       "A tall, spiced three-layer carrot cake with tangy cream cheese frosting.",
     ingredients: [
@@ -198,8 +198,7 @@ const RECIPES = [
     difficulty: 6,
     time: "1 hr",
     servings: 6,
-    image:
-      "https://japan.recipetineats.com/wp-content/uploads/2020/08/Strawberry_Shortcake_5140sq.jpg",
+    image: "strawberry-shortcake.jpg",
     blurb:
       "Buttery biscuits split and layered with macerated strawberries and whipped cream.",
     ingredients: [
@@ -329,6 +328,30 @@ const RECIPES = [
     time: "TBD",
     servings: "TBD",
     image: "sweet-potatoes.jpg",
+    blurb: "Under Construction 🚧",
+    ingredients: ["Recipe coming soon!"],
+    steps: ["Recipe coming soon!"],
+  },
+  {
+    id: 14,
+    name: "Jamaican Beef Patties",
+    category: "Snacks",
+    difficulty: 1,
+    time: "TBD",
+    servings: "TBD",
+    image: "jamaican-beef-patties.jpg",
+    blurb: "Under Construction 🚧",
+    ingredients: ["Recipe coming soon!"],
+    steps: ["Recipe coming soon!"],
+  },
+  {
+    id: 15,
+    name: "Cupcakes",
+    category: "Desserts",
+    difficulty: 1,
+    time: "TBD",
+    servings: "TBD",
+    image: "cupcakes.jpg",
     blurb: "Under Construction 🚧",
     ingredients: ["Recipe coming soon!"],
     steps: ["Recipe coming soon!"],
