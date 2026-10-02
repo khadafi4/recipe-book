@@ -356,6 +356,18 @@ const RECIPES = [
     ingredients: ["Recipe coming soon!"],
     steps: ["Recipe coming soon!"],
   },
+  {
+    id: 16,
+    name: "Arroz con Pollo",
+    category: "Mains",
+    difficulty: 1,
+    time: "TBD",
+    servings: "TBD",
+    image: "arroz-con-pollo.jpg",
+    blurb: "Under Construction 🚧",
+    ingredients: ["Recipe coming soon!"],
+    steps: ["Recipe coming soon!"],
+  },
   /* ============================================================
      TEMPORARY — easter egg for Jennifer. Delete this whole object
      after the date to remove it from the site.
