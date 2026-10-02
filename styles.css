@@ -385,6 +385,156 @@ a:hover {
   }
 }
 
+/* ---------- reviews ---------- */
+
+.reviews-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-top: 1.5rem;
+}
+
+.reviews-card h2 {
+  font-size: 1.35rem;
+  margin-bottom: 0.9rem;
+}
+
+.reviews-card h3 {
+  font-size: 1.1rem;
+  margin: 1.8rem 0 0.8rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--line);
+}
+
+.review-summary {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: var(--muted);
+}
+
+.review-summary strong {
+  color: var(--ink);
+  font-size: 1.3rem;
+}
+
+.stars {
+  color: #e0a21b;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.stars .stars-empty {
+  color: #e3dccf;
+}
+
+.review-item {
+  padding: 1rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.review-item:first-child {
+  border-top: none;
+}
+
+.review-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem 0.8rem;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.review-meta strong {
+  color: var(--ink);
+}
+
+.review-comment {
+  margin: 0.4rem 0 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.star-picker-group {
+  border: 0;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.star-picker-group legend {
+  float: none;
+  width: auto;
+  margin-bottom: 0.2rem;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* DOM order is 5..1 so "hover/checked fills everything to the left" is pure CSS. */
+.star-picker {
+  display: inline-flex;
+  flex-direction: row-reverse;
+}
+
+.star-picker input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.star-picker label {
+  padding: 0 0.1rem;
+  font-size: 2rem;
+  line-height: 1;
+  color: #e3dccf;
+  cursor: pointer;
+  transition: color 0.1s ease;
+}
+
+.star-picker label:hover,
+.star-picker label:hover ~ label,
+.star-picker input:checked ~ label {
+  color: #e0a21b;
+}
+
+.star-picker input:focus-visible + label {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.review-hp {
+  position: absolute;
+  left: -5000px;
+}
+
+.review-message {
+  min-height: 1.3em;
+  margin: 0.8rem 0 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600;
+}
+
+.review-message.error {
+  color: var(--accent-dark);
+}
+
+.review-thanks {
+  margin: 1.4rem 0 0;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--line);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600;
+  color: var(--accent-dark);
+}
+
 /* ---------- newsletter signup ---------- */
 
 .newsletter-section {
